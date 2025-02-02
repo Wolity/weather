@@ -16,7 +16,7 @@
   </nav>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .waves {
     .waves_img{
 
