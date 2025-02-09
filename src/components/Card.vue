@@ -36,6 +36,10 @@
         <p>26 °C</p>
       </main>
     </section>
+    <label>
+      <input>
+      <button class="btn">Change Location</button>
+    </label>
   </nav>
 </template>
 
@@ -59,6 +63,35 @@ nav {
   h3 {
     font-size: 24px;
     color: white;
+  }
+  section {
+    padding-top: 85px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    main{
+      color: white;
+      padding-top: 15px;
+      padding-bottom: 30px;
+      gap: 15px 0;
+      border-radius: 10px;
+      background: #272E37;
+      align-items: center;
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+    }
+    p{
+      font-weight: bold;
+      font-size: 20px;
+    }
+    h4{
+      font-size: 20px;
+    }
+  }
+  label{
+    display: flex;
+    flex-direction: column;
   }
 }
 </style>
