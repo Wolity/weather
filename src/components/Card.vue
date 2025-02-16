@@ -90,8 +90,19 @@ nav {
     }
   }
   label{
+    margin-top: 75px;
     display: flex;
     flex-direction: column;
+    .btn{
+      filter: drop-shadow(0px 20px 15px #000000);
+      border-radius: 10px;
+      font-weight: bold;
+      color: white;
+      font-size: 20px;
+      height: 50px;
+      width: 400px;
+      background: linear-gradient(45deg, #90D9E0, #5460E6);
+    }
   }
 }
 </style>
