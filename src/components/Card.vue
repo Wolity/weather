@@ -16,22 +16,22 @@
     </div>
     <section>
       <main>
-        <img src="" />
+        <img src="../assets/Sun.png" />
         <h4>Tue</h4>
         <p>30 °C</p>
       </main>
       <main>
-        <img src="" />
+        <img src="../assets/Group.png" />
         <h4>Wed</h4>
         <p>22 °C</p>
       </main>
       <main>
-        <img src="" />
+        <img src="../assets/bi_cloud-rain.png" />
         <h4>Thu</h4>
         <p>06 °C</p>
       </main>
       <main>
-        <img src="" />
+        <img src="../assets/Sun.png" />
         <h4>Fy</h4>
         <p>26 °C</p>
       </main>
@@ -99,9 +99,17 @@ nav {
       font-weight: bold;
       color: white;
       font-size: 20px;
-      height: 50px;
+      height: 55px;
       width: 400px;
       background: linear-gradient(45deg, #90D9E0, #5460E6);
+    }
+    input{
+      filter: drop-shadow(0px 20px 15px #000000);
+      border-radius: 10px;
+      color: white;
+      height: 30px;
+      width: 400px;
+      background: linear-gradient(45deg, #5460E6, #90D9E0);
     }
   }
 }
