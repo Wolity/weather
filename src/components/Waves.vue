@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+defineProps({
+  info: Object,
+});
+</script>
 
 <template>
   <nav class="waves">
@@ -6,14 +10,15 @@
     <div class="waves_info">
       <h1>Tuesday</h1>
       <span>20 Jun 2025</span>
-      <h2>Biarritz, FR</h2>
+      <h2>{{ info.city.name }},   {{ info.city.country }}</h2>
     </div>
     <div class="waves_weather">
       <img class="wave_picture" src="../assets/sun.png" />
-      <h2>29 °C</h2>
-      <h3>Sunny</h3>
+      <h2>{{ info.list[0].main.temp }} °C</h2>
+      <h3>{{ info.list[0].weather[0].main }}</h3>
     </div>
   </nav>
+  <!-- {{ info.city.country }} -->
 </template>
 
 <style lang="scss" scoped>
