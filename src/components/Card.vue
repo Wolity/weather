@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+let city = defineModel()
+</script>
 
 <template>
   <nav>
@@ -37,8 +39,8 @@
       </main>
     </section>
     <label>
-      <input>
-      <button class="btn">Change Location</button>
+      <input v-model="city">
+      <button @click="$emit('changeLocation',city.value)" class="btn">Change Location</button>
     </label>
   </nav>
 </template>
