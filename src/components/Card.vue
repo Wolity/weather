@@ -1,46 +1,36 @@
 <script setup>
-let city = defineModel()
+import { ref } from "vue";
+let city = ref()
+defineProps({
+  info: Object,
+});
 </script>
 
 <template>
   <nav>
     <div>
       <h2>PRECIPITATION</h2>
-      <h3>0%</h3>
+      <h3>{{ info.list[0].main.temp }} °С</h3>
     </div>
     <div>
       <h2>HUMIDITY</h2>
-      <h3>42%</h3>
+      <h3>{{ info.list[0].main.humidity }} %</h3>
     </div>
     <div>
       <h2>WIND</h2>
-      <h3>3 km/h</h3>
+      <h3>{{ info.list[0].wind.speed }} km/h</h3>
     </div>
     <section>
-      <main>
+      <main v-for="(i) in 4" :key = "i" :class = "{'active': i==1}">
         <img src="../assets/Sun.png" />
-        <h4>Tue</h4>
-        <p>30 °C</p>
+        <h4>{{ info.list[i*8].dt_txt.slice(8,10) }}</h4>
+        <p> {{info.list[i*8].main.temp}} °C</p>
       </main>
-      <main>
-        <img src="../assets/Group.png" />
-        <h4>Wed</h4>
-        <p>22 °C</p>
-      </main>
-      <main>
-        <img src="../assets/bi_cloud-rain.png" />
-        <h4>Thu</h4>
-        <p>06 °C</p>
-      </main>
-      <main>
-        <img src="../assets/Sun.png" />
-        <h4>Fy</h4>
-        <p>26 °C</p>
-      </main>
+      
     </section>
     <label>
       <input v-model="city">
-      <button @click="$emit('changeLocation',city.value)" class="btn">Change Location</button>
+      <button @click="$emit('changeLocation',city)" class="btn">Change Location</button>
     </label>
   </nav>
 </template>
@@ -106,13 +96,17 @@ nav {
       background: linear-gradient(45deg, #90D9E0, #5460E6);
     }
     input{
-      filter: drop-shadow(0px 20px 15px #000000);
+      filter: drop-shadown(0px 20px 15px #000000);
       border-radius: 10px;
       color: white;
       height: 30px;
       width: 400px;
       background: linear-gradient(45deg, #5460E6, #90D9E0);
     }
+  }
+  .active{
+    background-color: white !important;
+    color: black !important;
   }
 }
 </style>

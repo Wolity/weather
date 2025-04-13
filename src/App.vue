@@ -3,14 +3,15 @@ import Waves from "./components/Waves.vue";
 import Card from "./components/Card.vue";
 import { ref, defineModel } from "vue";
 let info = ref()
-async function weather(e) {
+async function weather(city) {
+  console.log(city)
   let request = await fetch(
-    `https://api.openweathermap.org/data/2.5/forecast?q=${e}&cnt=40&appid=1e9a174f92c5f2ce16b22391ff3531c8&units=metric`
+    `https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=40&appid=1e9a174f92c5f2ce16b22391ff3531c8&units=metric`
   );
    info.value = await request.json()
-  console.log(info)
+  console.log(info.value)
 }
-weather()
+weather("Kaliningrad")
 </script>
 
 <template>
@@ -20,7 +21,7 @@ weather()
   />
   <main>
     <Waves :info = "info" />
-    <Card @changeLocation="(e)=> weather(e)"/>  
+    <Card :info = "info" @change-location="(e)=> weather(e)"/>  
   </main>
 </template>
 
